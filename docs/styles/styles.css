@@ -228,9 +228,6 @@ textarea {
    border-radius: 16px;
 }
 
-.dash-panel {
-}
-
 .dash-panel-row-1 {
    display: grid;
    grid-template-columns: 3fr 1fr;
@@ -294,7 +291,7 @@ textarea {
 }
 
 .hero {
-   height: calc(100vh - 120px);
+   height: calc(100vh - 60px);
 }
 
 .finalisation button {
