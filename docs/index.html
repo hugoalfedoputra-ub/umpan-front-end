@@ -3,13 +3,19 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>IMK</title>
-        <link rel="stylesheet" href="./styles/styles.css" />
+        <title>Redirecting...</title>
+        <link rel="stylesheet" href="./styles/redir.css" />
+        <script>
+            // delay the redirect
+            setTimeout(function () {
+                window.location.href = "./pages/homepage.html";
+            }, 250);
+        </script>
     </head>
     <body>
-        <h1>hello world!</h1>
-        <div>
-            <a href="./pages/homepage.html">click me</a>
+        <div class="container">
+            <p>mari mengumpan...</p>
+            <div class="loading-bar-container"><div class="loading-bar"></div></div>
         </div>
     </body>
 </html>
