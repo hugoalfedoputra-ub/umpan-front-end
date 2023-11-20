@@ -1,13 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="../styles/styles.css" />
-    </head>
-    <body>
-        <object type="text/html" data="./components/navbar.html" width="100%" height="50"></object>
-        <h1>feedback</h1>
-    </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Feedback</title>
+      <link rel="stylesheet" href="../styles/styles.css" />
+   </head>
+   <body>
+      <div class="wrapper">
+         <object type="text/html" data="./components/navbar.html" width="100%" height="50"></object>
+         <div class="content">
+            <div class="contents">
+               <div class="panel">
+                  <div class="type-panel">
+                     <div class="type-container">
+                        <button onclick="changeContent('content1')" class="type-button">Kritik</button>
+                        <button onclick="changeContent('content2')" class="type-button">Saran</button>
+                        <button onclick="changeContent('content3')" class="type-button">Aksi</button>
+                     </div>
+                  </div>
+                  <div class="answer-panel">
+                     <!-- default when it first shows -->
+                     <div id="answer-panel-title"><h1>Form Kritik</h1></div>
+                     <form id="front-end-form" name="front-end-form" class="form-panel" onsubmit="return giveResponse(event)">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+
+                        <label for="subjek">Subjek</label>
+                        <input type="text" id="subjek" name="subjek" required />
+
+                        <label for="pesan">Pesan</label>
+                        <textarea id="pesan" name="pesan" rows="4" required></textarea>
+
+                        <div class="finalisation">
+                           <div>
+                              <img src="../images/paperclip.svg" height="24" width="24" />
+                              <p>Unggah lampiran...</p>
+                           </div>
+                           <button class="type-button" type="submit">Submit</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="panel">
+                  <div></div>
+                  <div class="response-panel" id="response-panel"></div>
+               </div>
+            </div>
+
+            <div class="footer">
+               <div class="container">
+                  <ul>
+                     Hubungi Kami
+                     <li class="footer-link"><a href="./contact_us.html">FAQ</a></li>
+                     <li class="footer-link"><a href="./contact_us.html">Bantuan</a></li>
+                     <br />
+                     Form Umpan Balik
+                     <li class="footer-link"><a href="./feedback.html">Form Kritik</a></li>
+                     <li class="footer-link"><a href="./feedback.html">Form Saran</a></li>
+                     <li class="footer-link"><a href="./feedback.html">Form Aksi</a></li>
+                  </ul>
+               </div>
+               <div class="container">
+                  <div class="instance-info">
+                     <div>Bagian dari</div>
+                     <div>Universitas Brawijaya</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script>
+         function changeContent(contentId) {
+            var answerDiv = document.getElementById("answer-panel-title");
+            var content;
+
+            // Define HTML content based on the button clicked
+            switch (contentId) {
+               case "content1":
+                  content = "<h1>Form Kritik</h1>";
+                  break;
+               case "content2":
+                  content = "<h1>Form Saran</h1>";
+                  break;
+               case "content3":
+                  content = "<h1>Form Aksi</h1>";
+                  break;
+            }
+
+            // Update the HTML content of the div
+            answerDiv.innerHTML = content;
+         }
+
+         function giveResponse(event) {
+            event.preventDefault();
+            var result = document.getElementById("response-panel");
+            var content = "Form dan lampiran berhasil di-submit.";
+            document.getElementById("front-end-form").reset();
+            result.innerText = content;
+         }
+      </script>
+   </body>
 </html>

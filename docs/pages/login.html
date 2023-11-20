@@ -1,13 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="../styles/styles.css" />
-    </head>
-    <body>
-        <object type="text/html" data="./components/navbar.html" width="100%" height="50"></object>
-        <h1>login</h1>
-    </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="../styles/styles.css" />
+   </head>
+   <body>
+      <style>
+         body {
+            overflow-y: hidden;
+         }
+      </style>
+      <div class="wrapper">
+         <object class="navbar-object" type="text/html" data="./components/navbar.html"></object>
+         <div class="content">
+            <div class="contents">
+               <div class="login-hero">
+                  <div>
+                     <div>
+                        <h1>Selamat datang kembali!</h1>
+                        <p>Atau <a href="./register.html">buat akun baru</a>; belum kenal maka belum sayang!</p>
+                     </div>
+
+                     <form id="front-end-form" name="front-end-form" class="form-panel" onsubmit="return redirect('./dashboard.html')">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required />
+
+                        <div class="finalisation">
+                           <p>Lupa password...</p>
+                           <button class="type-button" type="submit">Login</button>
+                        </div>
+                     </form>
+                  </div>
+
+                  <div class="login-image"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script>
+         function redirect(url) {
+            var passwordInput = document.getElementById("password");
+            var passwordValue = passwordInput.value;
+            if (passwordValue == "staff" || passwordValue == "admin") {
+               window.location.href = "./admin_dash.html";
+            } else {
+               window.location.href = url;
+            }
+            return false;
+         }
+      </script>
+   </body>
 </html>

@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
+      <title>Umpan!</title>
       <link rel="stylesheet" href="../styles/styles.css" />
    </head>
    <body>
@@ -14,13 +14,12 @@
                <div class="panel">
                   <div class="type-panel">
                      <div class="type-container">
-                        <h1>Dasbor Kamu</h1>
-                        <button class="type-button">Sejarah</button>
+                        <h1>Dasbor Admin</h1>
+                        <button class="type-button">Review</button>
                         <button class="type-button">Respons</button>
-                        <button class="type-button" onclick="changeState()">Anonimitas</button>
-                        <div class="anonimity-trigger" id="anonimity-trigger">
-                           <p>Kamu <a>TIDAK</a> anonim!</p>
-                        </div>
+                        <button class="type-button">Proses</button>
+                        <button class="type-button">Tindak</button>
+                        <button class="type-button">Analitik</button>
                      </div>
                   </div>
                   <div class="dash-panel">
@@ -73,17 +72,5 @@
             </div>
          </div>
       </div>
-
-      <script>
-         function changeState() {
-            var state = document.getElementById("anonimity-trigger").textContent;
-
-            if (state.includes("TIDAK")) {
-               document.getElementById("anonimity-trigger").innerHTML = "<p>Kamu <a>ANONIM!</a></p>";
-            } else {
-               document.getElementById("anonimity-trigger").innerHTML = "<p>Kamu <a>TIDAK</a> anonim!</p>";
-            }
-         }
-      </script>
    </body>
 </html>

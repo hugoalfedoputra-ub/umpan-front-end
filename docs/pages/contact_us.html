@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="../styles/styles.css" />
-    </head>
-    <body>
-        <object type="text/html" data="./components/navbar.html" width="100%" height="50"></object>
-        <h1>contact us</h1>
-    </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="../styles/styles.css" />
+   </head>
+   <body onload="changeContent('content1')">
+      <div class="wrapper">
+         <object type="text/html" data="./components/navbar.html" width="100%" height="50"></object>
+         <div class="content">
+            <div class="contents">
+               <div class="panel">
+                  <div class="type-panel">
+                     <div class="type-container">
+                        <button onclick="changeContent('content1')" class="type-button">FAQ</button>
+                        <button onclick="changeContent('content2')" class="type-button">Bantuan</button>
+                     </div>
+                  </div>
+                  <div class="answer-panel" id="answer-panel">
+                     <!-- default when it first shows -->
+                  </div>
+               </div>
+               <div class="panel">
+                  <div></div>
+                  <div class="response-panel" id="response-panel"></div>
+               </div>
+            </div>
+
+            <div class="footer">
+               <div class="container">
+                  <ul>
+                     Hubungi Kami
+                     <li class="footer-link"><a href="./contact_us.html">FAQ</a></li>
+                     <li class="footer-link"><a href="./contact_us.html">Bantuan</a></li>
+                     <br />
+                     Form Umpan Balik
+                     <li class="footer-link"><a href="./feedback.html">Form Kritik</a></li>
+                     <li class="footer-link"><a href="./feedback.html">Form Saran</a></li>
+                     <li class="footer-link"><a href="./feedback.html">Form Aksi</a></li>
+                  </ul>
+               </div>
+               <div class="container">
+                  <div class="instance-info">
+                     <div>Bagian dari</div>
+                     <div>Universitas Brawijaya</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <script>
+         function changeContent(contentId) {
+            var answerDiv = document.getElementById("answer-panel");
+            var content;
+
+            // Define HTML content based on the button clicked
+            switch (contentId) {
+               case "content1":
+                  content =
+                     "<h1>FAQ</h1><ol><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus ullamcorper mollis. Suspendisse congue odio ac massa dictum, id commodoodio scelerisque. Pellentesque suscipit nisl a sapien semper, non hendrerit ante rutrum. Nunc et sem lorem. Nullam risus nibh, iaculis nonmauris ut, scelerisque euismod quam.</li><li>Aliquam non ullamcorper metus. Vivamus maximus risus eget lectus cursus posuere. Aliquam dictum maximus rutrum. Aliquam erat volutpat. Vestibulum nec hendrerit purus. Integer ut facilisis metus. Aenean venenatis quis libero ac ultrices. Sed lorem lacus, sollicitudin eu enim vel, efficitur porttitor ante. Quisque nec tortor lectus.</li><li>Proin ullamcorper hendrerit elementum. Duis quis sodales augue. Praesent lorem libero, rutrum et condimentum lacinia, finibus vitae sem. Cras at facilisis mauris, vel suscipit augue. Phasellus sodales vulputate venenatis. Pellentesque interdum porttitor mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus molestie pellentesque elit quis venenatis. </li><li>Vivamus facilisis neque vitae tellus feugiat, bibendum dictum nunc facilisis. Cras ac lobortis nunc. Aenean sit amet risus sed nisl fringilla porta. Nunc eleifend quam ligula, sit amet ultricies tortor aliquet sed. Etiam nec tortor quis neque posuere pharetra. Nullam arcu mi, fringilla eu auctor vel, volutpat sit amet sem.</li><li>Cras ut viverra orci. Donec blandit mi felis, eu venenatis nisl euismod vel. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam ultrices magna vel nibh venenatis semper vel ac mauris. Donec ac auctor odio. Mauris accumsan vitae orci in euismod. Sed ultricies ligula eget eros euismod gravida. </li><li>Vestibulum consequat vitae metus id commodo. In auctor, dui ultrices suscipit efficitur, justo nibh pulvinar dolor, non gravida enim tellus sit amet orci. Sed vitae tempor ante. Fusce consectetur tortor rhoncus risus finibus, eget molestie diam fermentum. Sed luctus cursus diam, vitae tempus libero condimentum sit amet. Maecenas tempus lacus id lobortis convallis.</li></ol>";
+                  break;
+               case "content2":
+                  content =
+                     '<div id="answer-panel-title"><h1>Form Bantuan</h1></div><form id="front-end-form" name="front-end-form" class="form-panel" onsubmit="return giveResponse(event)"><label for="email">Email</label><input type="email" id="email" name="email" required /><label for="subjek">Subjek</label><input type="text" id="subjek" name="subjek" required /><label for="pesan">Pesan</label><textarea id="pesan" name="pesan" rows="4" required></textarea><div class="finalisation"><div><img src="../images/paperclip.svg" height="24" width="24" /><p>Unggah lampiran...</p></div><button class="type-button" type="submit">Submit</button></div></form>';
+                  break;
+            }
+
+            // Update the HTML content of the div
+            answerDiv.innerHTML = content;
+         }
+
+         function giveResponse(event) {
+            event.preventDefault();
+            var result = document.getElementById("response-panel");
+            var content = "Form dan lampiran berhasil di-submit.";
+            document.getElementById("front-end-form").reset();
+            result.innerText = content;
+         }
+      </script>
+   </body>
 </html>

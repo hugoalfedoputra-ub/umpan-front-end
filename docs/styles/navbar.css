@@ -39,7 +39,7 @@ body {
 }
 
 .normal-button {
-    width: 100px;
+    width: 100%;
     font-family: inherit;
     font-size: inherit;
     text-align: center;
@@ -55,7 +55,7 @@ body {
 }
 
 .highlight-button {
-    width: 100px;
+    width: 100%;
     font-family: inherit;
     font-size: inherit;
     padding: 16px;
