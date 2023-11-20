@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;800;900&display=swap");
+
+body {
+    font-family: "Work Sans", Arial, Helvetica, sans-serif;
+    overflow-y: hidden;
+    margin: 0;
+}
+
+.navbar {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    cursor: pointer;
+}
+
+.navbar-options {
+    display: flex;
+}
+
+.navbar-options ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar-options li {
+    float: right;
+    margin-left: 24px;
+}
+
+.navbar-options a {
+    text-decoration: none;
+}
+
+.normal-button {
+    width: 100px;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+    background-color: #eeeeee;
+    border: solid 3px #eeeeee;
+    padding: 13px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.normal-button a {
+    color: black;
+}
+
+.highlight-button {
+    width: 100px;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 16px;
+    background-color: #400edc;
+    border-radius: 16px;
+    border: none;
+    transition: ease 50ms;
+    color: white;
+    cursor: pointer;
+}
+
+.normal-button:hover {
+    transition: ease 50ms;
+    background-color: #eeeeee;
+    border-color: #eeeeee;
+    padding: 13px;
+    border: solid 3px #400edc;
+    color: #400edc;
+}
+
+.normal-button:not(:focus) {
+    transition: ease 50ms;
+}
+
+.highlight-button:hover {
+    transition: ease 50ms;
+    background-color: #eeeeee;
+    color: #400edc;
+}
+
+.highlight-button:not(:focus) {
+    transition: ease 50ms;
+}

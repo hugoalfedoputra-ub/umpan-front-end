@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../../styles/navbar.css" />
+    </head>
+    <body>
+        <!-- this is the header -->
+        <nav class="navbar">
+            <div class="navbar-logo"><img src="../../images/logo.svg" onclick="redirect('../homepage.html')" height="45" width="45" /></div>
+            <div class="navbar-options">
+                <ul>
+                    <li>
+                        <button onclick="redirect('../login.html')" class="highlight-button">Login</button>
+                    </li>
+                    <li>
+                        <button onclick="redirect('../register.html')" class="normal-button">Sign Up</button>
+                    </li>
+                    <li>
+                        <button onclick="redirect('../contact_us.html')" class="normal-button">Help</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <script>
+            function redirect(url) {
+                window.parent.location.href = url;
+            }
+        </script>
+    </body>
+</html>
