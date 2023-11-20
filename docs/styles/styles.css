@@ -13,16 +13,21 @@ body {
     padding-bottom: 0;
     border-bottom: 0;
     overflow-x: hidden;
+    max-height: max-content;
 }
 
 .wrapper {
+    position: relative;
     width: 100%;
 }
 
 .content {
     width: 100%;
     padding-top: 64px;
-    height: 100vh;
+}
+
+.contents {
+    height: max-content;
 }
 
 .navbar-object {
@@ -32,7 +37,7 @@ body {
     right: 0;
     padding: 32px;
     padding-left: 32px;
-    padding-bottom: 16px;
+    padding-bottom: 32px;
     width: calc(100vw - 64px);
     height: 50px;
     margin-bottom: 0;
@@ -40,15 +45,23 @@ body {
 }
 
 .sitemap-object {
-    position: static;
+    position: absolute;
     width: 100%;
-    height: 100%;
-    bottom: 0;
-    bottom: 0;
-    z-index: 1;
+    height: max-content;
 }
 
-.filler {
-    z-index: 0;
+.footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 8px;
+    text-align: left;
     background-color: #362b48;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    color: white;
+    height: fit-content;
+}
+
+.container {
+    padding: 16px;
 }
