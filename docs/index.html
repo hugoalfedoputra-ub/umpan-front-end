@@ -10,6 +10,15 @@
             setTimeout(function () {
                 window.location.href = "./pages/homepage.html";
             }, 250);
+
+            window.addEventListener("pageshow", function (event) {
+                // Check if the event's persisted property is false
+                if (event.persisted) {
+                    // Page is loaded from the bfcache (Back-Forward Cache)
+                    // Perform any necessary actions after a back navigation
+                    location.reload();
+                }
+            });
         </script>
     </head>
     <body>
